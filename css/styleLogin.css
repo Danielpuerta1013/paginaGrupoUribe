@@ -1,0 +1,7 @@
+#fondo_registro
+{
+    background-image: url('../img/fondologin2.jpg');
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir toda la pantalla */
+     /* Ajusta la posición de la imagen */
+    background-attachment: fixed; 
+}

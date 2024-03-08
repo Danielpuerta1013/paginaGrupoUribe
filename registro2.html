@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+    <div class="flex items-center justify-center h-screen bg-gray-200 border" id="fondo">
+        <form class="w-full max-w-sm bg-white rounded p-8 shadow-xl border">
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+              Correo
+            </label>
+            <input class="border py-2 px-3 text-grey-darkest w-full" type="text" name="username" id="username">
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+              Contraseña
+            </label>
+            <input class="border py-2 px-3 text-grey-darkest w-full" type="password" name="password" id="password">
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="verify-password">
+              Verificar contraseña
+            </label>
+            <input class="border py-2 px-3 text-grey-darkest w-full" type="password" name="verify-password" id="verify-password">
+          </div>
+          <div class="text-center">
+            <button class="bg-black hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+              Registrar
+            </button>
+          
+          </div>
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -18,3 +18,36 @@ function login() {
     }
     
 }
+
+
+function registrarUsuario() {
+    if (baseDatosUsuarios.some(usuario => usuario.usuario === correo.value)) {
+        alert('El usuario ya existe en la base de datos');
+        return;
+    }
+    
+    if (contrasena.value.length < 6) {
+        alert('La contraseña debe tener al menos 6 caracteres');
+        return;
+    }
+    
+    if (!/[A-Z]/.test(contrasena.value)) {
+        alert('La contraseña debe contener al menos una letra mayúscula');
+        return;
+    }
+    
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(contrasena.value)) {
+        alert('La contraseña debe contener al menos un carácter especial');
+        return;
+    }
+
+    
+    if (contrasena.value !== confirmarContrasena.value) {
+        alert('Las contraseñas no coinciden');
+        return;
+    }
+    
+    baseDatosUsuarios.push({ usuario: correo.value, pass: contrasena.value });
+    alert('Registro exitoso');
+
+}
