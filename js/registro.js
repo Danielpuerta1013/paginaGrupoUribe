@@ -10,30 +10,50 @@ const correo = document.getElementById('correo');
 const contrasena = document.getElementById('contrasena');
 const confirmarContrasena = document.getElementById('confirmarContrasena');
 const botonRegistro=document.getElementById('botonRegistro')
+const errorCorreo = document.getElementById('errorCorreo');
+const errorContrasena = document.getElementById('errorContrasena');
+const errorConfirmarContrasena = document.getElementById('errorConfirmarContrasena');
 correo.addEventListener('blur', function() {
-    if (baseDatosUsuarios.some(usuario => usuario.usuario === correo.value)) {
-       
-        alert('El usuario ya existe en la base de datos');
+    if (baseDatosUsuarios.some(usuario => usuario.usuario === correo.value)) {       
+        errorCorreo.textContent = 'Este correo ya está registrado.';
+        errorCorreo.classList.remove('hidden');
+    }else{
+        errorCorreo.classList.add('hidden');
     }
 });
 
 contrasena.addEventListener('blur', function() {
     if (contrasena.value.length < 6) {
-        alert('La contraseña debe tener al menos 6 caracteres');
+        errorContrasena.textContent = 'La contraseña debe tener al menos 6 caracteres.';
+        errorContrasena.classList.remove('hidden');
+    }else{
+        errorConfirmarContrasena.classList.add('hidden');
     }
+
     if (!/[A-Z]/.test(contrasena.value)) {
-        alert('La contraseña debe contener al menos una letra mayúscula');
-        return;
+        errorContrasena.textContent = 'La contraseña debe tener al menos una letra mayusculaa.';
+        errorContrasena.classList.remove('hidden');
+        
+    }else{
+        errorConfirmarContrasena.classList.add('hidden');
     }
+
     if (!/[!@#$%^&*(),.?":{}|<>]/.test(contrasena.value)) {
-        alert('La contraseña debe contener al menos un carácter especial');
-        return;
+        errorContrasena.textContent = 'La contraseña debe tener al menos un caracer especial.';
+        errorContrasena.classList.remove('hidden');
+        
+    }else{
+        errorConfirmarContrasena.classList.add('hidden');
     }
+
 });
 
 confirmarContrasena.addEventListener('blur', function() {
     if (contrasena.value !== confirmarContrasena.value) {
-        alert('Las contraseñas no coinciden');
+        errorConfirmarContrasena.textContent = 'Las contraseñas no coinciden.';
+        errorConfirmarContrasena.classList.remove('hidden');
+    }else{
+        errorConfirmarContrasena.classList.add('hidden');
     }
 });
 botonRegistro.addEventListener('click',function(){

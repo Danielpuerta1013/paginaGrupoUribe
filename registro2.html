@@ -16,23 +16,27 @@
               Correo
             </label>
             <input id="correo" class="border py-2 px-3 text-grey-darkest w-full" type="text" name="username">
+            <p class="text-red-500 hidden" id="errorCorreo">Este correo ya está registrado.</p>
           </div>
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
               Contraseña
             </label>
             <input class="border py-2 px-3 text-grey-darkest w-full" type="password" name="password" id="contrasena">
+            <p class="text-red-500 hidden" id="errorContrasena"></p>
           </div>
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="verify-password">
               Verificar contraseña
             </label>
             <input class="border py-2 px-3 text-grey-darkest w-full" type="password" name="verify-password" id="confirmarContrasena">
+            <p class="text-red-500 hidden" id="errorConfirmarContrasena">Las contraseñas no coinciden.</p>
           </div>
           <div class="text-center">
             <button class="bg-black hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" onclick="registrarUsuario()" id="botonRegistro">
               Registrar
             </button>
+            <a href="login.html" class="block mt-2 text-sm text-gray-600 underline">Volver al login</a>
           
           </div>
         </form>
