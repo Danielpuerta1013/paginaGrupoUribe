@@ -1,25 +1,26 @@
-baseDatosUsuarios=[
-    {usuario:'daniel',pass:'1234'},
-    {usuario:'ana',pass:'1234'},
-    {usuario:'sara',pass:'1234'},
-    {usuario:'jorge',pass:'1234'},
-    {usuario:'manuela',pass:'1234'}
-]
-
-function login() {
-    let correo=document.getElementById('correo')
-    let contrasena=document.getElementById('contrasena')
-    const usuarioEncontrado=baseDatosUsuarios.find(usuario=>usuario.usuario===correo.value && usuario.pass===contrasena.value)
-    if (usuarioEncontrado) {
-        location.href='index.html'
-    }
-    else{
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Usuario o contraseña incorrectos'
-        });
-    }
+import { baseDatosUsuarios } from "./baseDatos.js";
+document.addEventListener('DOMContentLoaded', function() {
+    const botonIniciarSesion = document.getElementById('iniciarSesion');
     
-}
+    botonIniciarSesion.addEventListener('click', function() {
+        login();
+    });
 
+    function login() {
+        console.log(baseDatosUsuarios)
+        let correo = document.getElementById('correo');
+        let contrasena = document.getElementById('contrasena');
+        const usuarioEncontrado = baseDatosUsuarios.find(usuario => usuario.usuario === correo.value && usuario.pass === contrasena.value);
+        
+        if (usuarioEncontrado) {
+            location.href = 'index.html';
+            localStorage.setItem('usuarioActual', JSON.stringify(usuarioEncontrado));
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Usuario o contraseña incorrectos'
+            });
+        }
+    }
+});

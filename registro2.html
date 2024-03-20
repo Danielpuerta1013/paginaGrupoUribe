@@ -10,7 +10,7 @@
 </head>
 <body >
     <div class="flex items-center justify-center h-screen bg-gray-200 border" id="fondo">
-        <form class="w-full max-w-sm bg-white rounded p-8 shadow-xl border" id="registroForm">
+        <form class="w-full max-w-sm bg-white rounded p-8 shadow-xl border" id="formulario">
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
               Correo
@@ -33,7 +33,7 @@
             <p class="text-red-500 hidden" id="errorConfirmarContrasena">Las contraseñas no coinciden.</p>
           </div>
           <div class="text-center">
-            <button class="bg-black hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" onclick="registrarUsuario()" id="botonRegistro">
+            <button class="bg-black hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" id="botonRegistro">
               Registrar
             </button>
             <a href="login.html" class="block mt-2 text-sm text-gray-600 underline">Volver al login</a>
@@ -41,7 +41,7 @@
           </div>
         </form>
     </div>
-    <script src="./js/registro.js"></script>
+    <script type="module" src="./js/registro.js"></script>
     
 </body>
 </html>
